@@ -9,7 +9,7 @@ from bokeh.models import RangeTool
 # Load data
 @st.cache
 def load_data():
-    df = pd.read_csv("~/Documents/MarketData/MarketData.csv")
+    df = pd.read_csv("./MarketData.csv")
     df['Date'] = pd.to_datetime(df['Date'])
     df['Price_Change'] = df['Adj Close'] - df['Open']
     df['Price_Change_Direction'] = df['Price_Change'].apply(lambda x: 1 if x > 0 else 0)
